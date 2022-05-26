@@ -1,55 +1,91 @@
-head {
-    top: 0;
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
+
+html { 
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    /*filter: blur(5px);*/
+}
+
 header {
     width: 100%;
     height: 50px;
     left: 0;
     top: 0;
     background-color: rgba(23, 34, 51, 0.25);
+
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
 }
 
-#topicos {
-    text-align: center;
-}
-
-ul li {
+nav ul {
     list-style: none;
-
+    display: flex;
+    align-items: center;    
 }
 
-ul li a {
+nav li {
+    margin: 0 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 50px;
+}
+
+nav ul li a {
     color: white;
     text-decoration: none;
     margin-left: 50px;
     margin-right: 50px;
 }
 
-ul li a:hover {
-    color: rgb(9, 92, 218);
-    text-decoration: underline;
+nav ul li a:hover {
+    color: rgb(69, 140, 248);
 }
 
-body {
-    font-family: 'Roboto Condensed', sans-serif;
-    padding: 0;
-    margin: 0;
-    background-image: url(../img/img_principal.jpg);
-    background-size: cover;
-    /*background-attachment: fixed;*/
-    background-repeat: no-repeat;
+nav a {
+    transition: color 0.3s ease;
+    letter-spacing: 2px;
 }
 
-#titulo {
-    font-family: 'Playfair Display', serif;
-    text-align: center;
-    color: white;  
-
-    font-size: 250%;
+.img_principal {
     width: 100%;
-    margin-top: 15%;
-    font-weight: bold;
+}
 
+#degrade {
+    height: 55vh;
+    background: linear-gradient(360deg, rgb(13, 13, 34) 2.5%, rgba(12, 12, 34, 0.745072) 32.5%, rgba(10, 11, 35, 0.483607) 55.62%, rgba(9, 10, 35, 0.220468) 77.5%, rgba(8, 9, 35, 0) 95.62%);
+    
+    margin-top: -25%;
+    position: relative;
+
+}
+
+main {
+    background-color: rgb(13, 13, 34);
+    min-height: 100vh;
+    margin-top: 0;
+}
+
+footer {
+    min-height: 50vh;
+    background-color: whitesmoke;
+}
+
+p {
+    padding: 50px;
+    color: rgb(13, 13, 34);
 }
 
 ::-webkit-scrollbar {
@@ -61,11 +97,12 @@ body {
     background-color: rgb(13, 13, 34);
 }
 
-::-webkit-scrollbar:hover {
-    width: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    width: 10px;
-    background-color: rgb(13, 13, 34);
+h1 {
+    font-family: 'playfar', 'display';
+    font-size: 50px;
+    position: absolute;
+    color: white;
+    max-width: 600px;
+    
+    margin-top: -40%;
 }
