@@ -19,37 +19,54 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!-- ### TÍTULO DOCUMENTO ### -->
-        <title>############</title>
+        <title>Projeto Estágio!</title>
     </head>
     <body>
-        <!-- ### CABEÇALHO ### -->
-        <header>
-            <nav>
-                <img class="img_logo" src="img/img_logo.png" alt="Logo">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#">Tópico2</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-                <button disabled>Cadastre-se</button>
-            </nav>
-        </header>
-
-        <!-- ### IMAGEM DE DESTAQUE ### -->
-        <img class="img_principal" src="img/img_principal.jpg" alt="Imagem Principal">
-        <div class="titulo">
-            <h1>Machine Learning, um novo passo na tecnologia!</h1>
-        </div>
-
-        <!-- ### INFORMAÇÕES DO SITE ### -->
-        <section id="degrade"></section>
-        <main id="sobre">
+        <div class="container" id="all">
+            <header>
+                <img class="img_logo" src="img/img_logo.png" alt="Logo" style="margin-right: 157px;">
+                <nav>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#">Tópico2</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <button onclick="showModal()"><img src="img/dec_cadastro.png" alt="">Cadastre-se</button>
+            </header>
             
-        </main>
+            <main>
+                <div id="div_titulo">
+                    <h1 id="titulo">Machine Learning, um novo passo na tecnologia!</h1>
+                    <img src="img/dec_vetor.png" alt="Decoração" style="margin-bottom: 5px;">
+                    <p>Arraste para baixo &#x2B07</p>
+                </div>
+            </main>
+            
+            <section id="sobre"></section>
+            
+            <footer id="contato">
+                <hr>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, necessitatibus reiciendis accusamus commodi, labore eveniet maiores suscipit odio sequi, reprehenderit ut beatae tempore consequatur eligendi eaque quod rem ratione quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non porro laudantium placeat accusantium ipsa. Dolorum reiciendis quo molestiae, dolor expedita quas animi numquam, minus repudiandae eaque dignissimos ut distinctio libero? </p>
+                <div>
+                    <p>Copyright&copy <a href="file:///C:/Users/Rodrigo/Documents/GitHub/projeto_estagio/prototype-estagio/home.html">Página Inicial</a></p>
+                </div>
+            </footer>
+        </div>
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <span onclick="hideModal()">&times;</span>
+                <img src="img/img_logo_cadastro.png" alt="Tela Cadastro" style="width: 40%;">
+                <h1>Cadastro</h1>
+                
+                <label for="nome">Nome de Usuário</label>
+                <input type="text" id="inputNome" placeholder="Digite seu nome">
+
+                <label for="senha">Senha</label>
+                <input type="password" id="inputSenha" placeholder="Digite seu senha">
+            </div>
+        </div>
         
-        <footer id="contato">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non doloremque tempora, repudiandae nihil architecto quidem expedita obcaecati quae at aliquid. Officiis culpa dolores laborum voluptas nihil tempore nostrum, dolorem ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat minus voluptate incidunt dignissimos tempore facere consequatur et dolor beatae voluptates, fugiat suscipit veniam deserunt eveniet. Quasi quibusdam ad cumque.</p>
-        </footer>
         <!-- ### JAVASCRIPT ### -->
         <script src="javascript/script.js"></script>
     </body>
