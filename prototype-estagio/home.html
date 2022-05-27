@@ -53,17 +53,21 @@
                 </div>
             </footer>
         </div>
+
+        <!-- ### MODAL POP-UP ### -->
         <div class="modal" id="modal">
             <div class="modal-content">
-                <span onclick="hideModal()">&times;</span>
-                <img src="img/img_logo_cadastro.png" alt="Tela Cadastro" style="width: 40%;">
-                <h1>Cadastro</h1>
+                <h1><img src="img/img_logo_cadastro.png" alt="Tela Cadastro" style="width: 40%;"><br>Cadastro</h1>
+                
                 
                 <label for="nome">Nome de Usuário</label>
-                <input type="text" id="inputNome" placeholder="Digite seu nome">
+                <input type="text" id="inputNome" placeholder="Digite seu nome" required>
 
                 <label for="senha">Senha</label>
-                <input type="password" id="inputSenha" placeholder="Digite seu senha">
+                <input type="password" id="inputSenha" placeholder="Digite seu senha" required>
+
+                <button id="confirma">Cadastrar</button>
+                <button id="cancela" onclick="hideModal()">Cancelar</button>
             </div>
         </div>
         
