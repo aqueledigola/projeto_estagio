@@ -18,13 +18,16 @@
         <!-- ### CSS ### -->
         <link rel="stylesheet" href="css/style.css">
 
+        <!-- ### ICONE DO SITE ### -->
+        <link rel="shortcut icon" href="img/favicon.jpg">
+
         <!-- ### TÍTULO DOCUMENTO ### -->
         <title>Projeto Estágio!</title>
     </head>
     <body>
         <div class="container" id="all">
             <header>
-                <img class="img_logo" src="img/img_logo.png" alt="Logo" style="margin-right: 157px;">
+                <img class="img_logo" src="img/img_logo.png" alt="Logo">
                 <nav>
                     <ul>
                         <li><a href="#sobre">Sobre</a></li>
@@ -39,14 +42,50 @@
                 <div id="div_titulo">
                     <h1 id="titulo">Machine Learning, um novo passo na tecnologia!</h1>
                     <img src="img/dec_vetor.png" alt="Decoração" style="margin-bottom: 5px;">
-                    <p>Arraste para baixo &#x2B07</p>
+                    <p>Arraste para baixo ⬇</p>
                 </div>
             </main>
             
-            <section id="sobre"></section>
+            <section id="sobre">
+                <div class="grid_conteudo">
+                    <div id="sobre_1">
+                        <h1 style="cursor: default;">Título imagem 1</h1>
+                        <p style="cursor: default;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure adipisci assumenda nesciunt voluptates in exercitationem vero odit a explicabo totam consectetur nihil id molestias voluptatum magni sapiente, eum dolores perferendis.</p>
+                        
+                        <a href="">Ler mais ➞</a>
+                    </div>
+                    
+                    <div id="imagem_1">
+                        <img src="img/exemplo.png" alt="" width="100%">
+                    </div>
+
+                    
+                    <div id="sobre_2">
+                        <h1 style="cursor: default;">Título imagem 2</h1>
+                        <p style="cursor: default;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure adipisci assumenda nesciunt voluptates in exercitationem vero odit a explicabo totam consectetur nihil id molestias voluptatum magni sapiente, eum dolores perferendis.</p>
+
+                        <a href="">Ler mais ➞</a>
+                    </div>
+                    
+                    <div id="imagem_2">
+                        <img src="img/exemplo.png" alt="" width="100%">
+                    </div>
+
+                    <div id="sobre_3">
+                        <h1 style="cursor: default;">Título imagem 3</h1>
+                        <p style="cursor: default;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure adipisci assumenda nesciunt voluptates in exercitationem vero odit a explicabo totam consectetur nihil id molestias voluptatum magni sapiente, eum dolores perferendis.</p>
+
+                        <a href="">Ler mais ➞</a>
+                    </div>
+                    
+                    <div id="imagem_3">
+                        <img src="img/exemplo.png" alt="" width="100%">
+                    </div>
+
+                </div>
+            </section>
             
             <footer id="contato">
-                <hr>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, necessitatibus reiciendis accusamus commodi, labore eveniet maiores suscipit odio sequi, reprehenderit ut beatae tempore consequatur eligendi eaque quod rem ratione quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non porro laudantium placeat accusantium ipsa. Dolorum reiciendis quo molestiae, dolor expedita quas animi numquam, minus repudiandae eaque dignissimos ut distinctio libero? </p>
                 <div>
                     <p>Copyright&copy <a href="file:///C:/Users/Rodrigo/Documents/GitHub/projeto_estagio/prototype-estagio/home.html">Página Inicial</a></p>
@@ -60,11 +99,12 @@
                 <h1><img src="img/img_logo_cadastro.png" alt="Tela Cadastro" style="width: 40%;"><br>Cadastro</h1>
                 
                 
-                <label for="nome">Nome de Usuário</label>
+                <label for="nome" style="color: black;">Nome de Usuário</label>
                 <input type="text" id="inputNome" placeholder="Digite seu nome" required>
 
-                <label for="senha">Senha</label>
-                <input type="password" id="inputSenha" placeholder="Digite seu senha" required>
+                <label for="senha" style="color: black;">Senha</label>
+                <input type="password" style="padding-right: 50px;" id="inputSenha" placeholder="Digite seu senha" required>
+                <img class="img_senha" id="senhaonoff" src="img/dec_senhaon.png" alt="Mostrar Senha" onclick="eyeClick()">
 
                 <button id="confirma">Cadastrar</button>
                 <button id="cancela" onclick="hideModal()">Cancelar</button>
