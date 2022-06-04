@@ -3,69 +3,119 @@
     margin: 0; 
     padding: 0; 
     box-sizing: border-box;  
-    font-family: 'Montserrat', sans-serif; 
+    font-family: system-ui, -apple-system Helvetica, Arial, sans-serif;
+    font-weight: 500;
     scroll-behavior: smooth;
 }
 
-ul {
-    list-style: none;
-}
-
-/* GRID */
+/* GRID GERAL */
 .container {display: grid; grid-template-areas: "h" "m" "s" "f";}
 
 /* CABEÇALHO */
 header {
-    background-color: rgba(23, 34, 51, 0.25);
-    width: 100%;
-    height: auto;
     grid-area: h;
     top: 0;
     left: 0;
-    display: flex;
-    position: absolute;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 50px;
 }
 
-nav ul {display: flex;}
-nav li {margin: 0 20px;}
-nav li:first-child {margin-left: 130px;}
-nav li:last-child {margin-right: 0;}
-nav a, footer a {
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: white;
+    margin: 8px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 0;
+    cursor: default;
+}
+
+nav {
+    background-color: rgb(35, 50, 75);
+    
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 24px;
+}
+
+nav li a,       footer a       {color: white; text-decoration: none; text-transform: uppercase; padding: 1.9vh; transition: all 0.3s ease;}
+nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
+
+#buttonEntrar {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-    letter-spacing: 2px;
-}
-    
-nav a:hover, footer a:hover {color: rgb(69, 140, 248);}
-
-header button {
-    background: none; 
-    border-width: 2px; 
-    border-radius: 5px; 
-    border-color: rgb(255, 255, 255); 
-    border-style: solid; 
-    display: flex;  
-    align-items: center; 
-    color: white; 
-    font-size:20px; 
-    cursor: pointer; 
-    padding: 5px;
+    border: white solid 1px;
+    border-radius: 3px;
+    padding: 5px 20px;
     transition: all 0.3s ease;
 }
+#buttonEntrar:hover {background-color: white; color: rgb(31, 62, 102);}
 
-header button img {padding-right: 5px;}
-header button:hover {border-color: rgb(69, 140, 248); box-shadow: 3px 3px 10px rgb(73, 73, 73);}
+#buttonCadastrar {
+    color: white;
+    background-color: rgb(68, 124, 202);
+    text-decoration: none;
+    border: rgb(68, 124, 202) solid 1px;
+    border-radius: 2px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+#buttonCadastrar:hover {background-color: rgb(49, 98, 161); border-color: rgb(49, 98, 161);}
+
 
 /* RESPONSIVIDADE DO CABEÇALHO */
-@media (max-width: 700px) {
-    header {flex-direction: column;}
-    header img {margin-right: 0;}
-    header img, nav {margin-top: 15px;}
-    header button {margin-top: 15px ; margin-bottom: 15px;}
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .buttonAccount {
+        display: none;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 7vh;
+        right: 0;
+        width: 50vw;
+        height: 93vh;
+        background-color: rgb(35, 50, 75);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+    }
+
+    nav ul li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+nav ul.show {
+    transform: translateX(0); 
 }
 
 /* RESPONSIVIDADE DA IMAGEM PRINCIPAL  XXXXX ERROR XXXXX
@@ -82,10 +132,10 @@ header button:hover {border-color: rgb(69, 140, 248); box-shadow: 3px 3px 10px r
 
 /* INÍCIO */
 main {
-    background: no-repeat center/cover url(../img/img_principal.jpg);
-    width: 100%;
-    height: 100vh;
-    box-shadow: inset 0 -50px 50px rgb(144, 172, 212);
+    /*background: url(../img/img_principal.jpg) no-repeat center center;
+    background-size: cover;*/
+    background-color: rgb(49, 98, 161);
+    height: 93vh;
     grid-area: m;
 }
 
@@ -96,6 +146,7 @@ main {
 
 #titulo {
     font-family: 'playfar', 'display';
+    font-weight: bold;
     font-size: 4rem;
     text-align: left;
     color: white;
@@ -278,4 +329,4 @@ footer div p {
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {width: 5px;}
-::-webkit-scrollbar-thumb {width: 5px; background-color: rgb(24, 24, 32);}
+::-webkit-scrollbar-thumb {width: 5px; background-color: rgb(24, 24, 32); border-radius: 3px;}
