@@ -1,4 +1,4 @@
-/* ============================== RESET ============================== */
+/* =============================== RESET ================================ */
 *, html, body {
     margin: 0; 
     padding: 0; 
@@ -8,20 +8,22 @@
     scroll-behavior: smooth;
 }
 
-/* ============================== GRID GERAL PAGINA PRINCIPAl ============================== */
+/* ==================== GRID GERAL PAGINA PRINCIPAl ====================== */
 .container {display: grid; grid-template-areas: "h" "m" "s" "f";}
 
 /* ============================== CABEÇALHO ============================== */
 #header {
-    background-color: rgb(35, 50, 75);
+    background-color: rgba(0, 0, 0, 0);
     grid-area: h;
     top: 0;
     left: 0;
+    width: 100%;
     height: 7vh;
     padding: 20px 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: absolute;
 }
 
 #logo {
@@ -42,11 +44,12 @@ nav li a, footer a {
     color: white; 
     text-decoration: none; 
     text-transform: uppercase; 
-    padding: 1.9vh; 
-    transition: all 0.3s ease;
+    padding: 1.5vh; 
+    transition: all 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
 }
 
-nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
+nav li a:hover, footer a:hover {border-bottom: 3px solid white;}
 
 #buttonEntrar {
     color: white;
@@ -73,8 +76,14 @@ nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
     display: none;
 }
 
-/* ============================== RESPONSIVIDADE DO CABEÇALHO ============================== */
+#buttonAccount {
+    display: none;
+}
+
+/* ============================== RESPONSIVIDADE 600px ============================== */
 @media (max-width: 600px) {
+    
+    /* ========================== RESPONSIVIDADE CABEÇALHO ===========================*/
     #btn-mobile {
         display: flex;
         padding: .5rem 1rem;
@@ -91,6 +100,7 @@ nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
         width: 20px;
         border-top: 2px solid;
     }
+
     #hamburguer::after, #hamburguer::before {
         content: "";
         display: block;
@@ -102,19 +112,10 @@ nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
         position: relative;
     }
 
-    #nav.active #hamburguer {
-        border: none;
-    }
-    #nav.active #hamburguer::after {
-        transform: rotate(-135deg);
-        top: -7px;
-    }
-    #nav.active #hamburguer::before {
-        transform: rotate(135deg);
-    }
-
-    #buttonAccount {
-        display: none;
+    #header {
+        background-color: rgb(35, 50, 75);
+        box-shadow: 0 10px 70px rgb(27, 35, 61);
+        padding: 20px 2rem;
     }
 
     #menu  {
@@ -139,18 +140,42 @@ nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
         border-bottom: 2px solid rgba(0, 0, 0, 0.3);  
     }
 
+    #nav.active #hamburguer {
+        border: none;
+    }
+
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+
     #nav.active #menu {
         width: 100%;
+    }
+
+    /* ========================== RESPONSIVIDADE MAIN ===========================*/
+    #main {
+        width: 100vw;
+        max-height: 50vh;
+    }
+
+    #div_titulo h1 {
+        font-size: 30px;
     }
 }
 
 /* ============================== INÍCIO ============================== */
 #main {
-    /*background: url(../img/img_principal.jpg) no-repeat center center;*/
-    background-color: rgb(68, 124, 202);
+    background: url(../img/img_principal.jpg) no-repeat center center;
+    /*background-color: rgb(68, 124, 202);*/
     background-size: cover;
-    height: 93vh;
+    height: 100vh;
     grid-area: m;
+    box-shadow: 0 15px 70px rgb(41, 38, 71);
 }
 
 #div_titulo {
@@ -173,12 +198,15 @@ nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
 }
 
 /* ============================== CONTEÚDO ============================== */
-section {
-    background: linear-gradient(360deg, rgb(255, 255, 255) 60%, rgb(216, 216, 238) 80% , rgb(144, 172, 212)) ;
+#sobre {
     width: 100%;
-    min-height: 200vh;
+    height: auto;
     grid-area: s;
-    padding: 100px 300px;
+    
+}
+
+#container-sobre {
+    padding: 200px 300px;
 }
 
 .grid_conteudo {
@@ -211,6 +239,13 @@ section {
 #sobre_3 {grid-area: sob3; text-align: justify;}
 #imagem_3 {grid-area: img3;}
 
+#sobre2 {
+    width: 100%;
+    height: 200vh;
+    box-shadow: 0 -20px 70px rgb(27, 35, 61);
+    background-color: rgb(27, 35, 61);
+}
+
 /* ============================== RODAPÉ ============================== */
 footer {
     background-color: rgb(38, 43, 61);
@@ -236,134 +271,6 @@ footer div p {
     text-align: center;
     cursor: default;
 }
-
-/* ============================== MODAL ============================== 
-.modal {
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    padding: 0;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(1.1);
-    opacity: 0;
-    visibility: hidden;
-    transition: visibility 0.25s ease-in-out, transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
-}
-
-.modal-content {
-    background-color: white;
-    box-shadow: 10px 10px rgb(49, 98, 161);
-    width: 30%;
-    padding: 15px 25px;
-    border-radius: 10px;
-    position: relative;
-}
-
-#modal h1 {
-    text-align: center;
-    color: black; 
-    font-weight: bolder;
-    margin: 12px 0 30px 0;
-    cursor: default;
-}
-
-#modal input {
-    width: 100%;
-    height: 30px;
-    padding: 20px 10px;
-    margin: 5px 0 20px 0;
-    border-color: rgb(160, 160, 160);
-    border-width: 1px;
-    border-radius: 3px;
-    border-style: solid;
-}
-
-#modal input:hover {
-    box-shadow: 3px 3px 10px rgb(73, 73, 73);
-}
-
-.modal-content .img_senha {
-    position: absolute;
-    top: 68%;
-    right: 40px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-#confirma {
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 20px;
-    width: 100%;
-    border: none;
-    border-radius: 3px;
-    background-color: rgb(49, 98, 161);
-    text-align: center;
-    padding: 10px 0 10px 0;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-#confirma:hover {background-color: rgb(31, 62, 102);}
-
-#cancela {
-    color: rgb(49, 98, 161);
-    font-weight: bold;
-    font-size: 15px;
-    margin: 10px 0 20px 0;
-    width: 100%;
-    border-color: rgb(49, 98, 161);
-    border-width: 1px;
-    border-radius: 3px;
-    border-style: solid;
-    background-color: white;
-    text-align: center;
-    padding: 10px 0 10px 0;
-    cursor: pointer;
-    transition: all 0.5s ease;
-}
-
-#cancela:hover {background-color: rgb(49, 98, 161); color: white;}
-
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-}
-
-.blur-all {
-    filter: blur(3px);
-}*/
-
-/* ===================================================== PAGINA DE LOGIN =======================================================*/
-#main-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#left-login {
-    background-color: aquamarine;
-    width: 40vw;
-    height: 100vh;
-}
-#right-login {
-    background-color: rgb(255, 127, 127);
-    width: 60vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
-#card {
-    margin: auto;
-}
-
-
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {width: 5px;}
