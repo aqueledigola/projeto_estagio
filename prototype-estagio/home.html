@@ -25,28 +25,28 @@
         <title>Projeto Estágio!</title>
     </head>
     <body>
-        <div class="container" id="all">
-            <header>
-                <nav>
-                    <h1 class="logo">Logo Estágio</h1>
-                    <ul id="navbar">
+        <div class="container">
+            <header id="header">
+                <h1 id="logo">Logo Estágio</h1>
+                
+                <nav id="nav">
+                    <button id="btn-mobile">
+                        <span id="hamburguer"></span>
+                    </button>
+                    <ul id="menu">
                         <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#">Tópico</a></li>
+                        <li><a href="home.html">Tópico</a></li>
                         <li><a href="#contato">Contato</a></li>
                     </ul>
-                    <div class="buttonAccount">
-                        <a id="buttonEntrar" href="#">Entrar</a>
-                        <a id="buttonCadastrar" href="#">Cadastrar</a>
-                    </div>
-                    <div class="mobile-menu" onclick="ShowHideNavbar()">
-                        <div class="line1"></div>
-                        <div class="line2"></div>
-                        <div class="line3"></div>
-                    </div>
                 </nav>
+
+                <div id="buttonAccount">
+                    <a id="buttonEntrar" href="form.html">Entrar</a>
+                    <a id="buttonCadastrar" href="form.html">Cadastrar</a>
+                </div>
             </header>
             
-            <main>
+            <main id="main">
                 <div id="div_titulo">
                     <h1 id="titulo">Machine Learning, um novo passo na tecnologia!</h1>
                     <img src="img/dec_vetor.png" alt="Decoração" style="margin-bottom: 5px;">
@@ -99,24 +99,6 @@
                     <p>Copyright&copy <a href="file:///C:/Users/Rodrigo/Documents/GitHub/projeto_estagio/prototype-estagio/home.html">Página Inicial</a></p>
                 </div>
             </footer>
-        </div>
-
-        <!-- ### MODAL POP-UP ### -->
-        <div class="modal" id="modal">
-            <div class="modal-content">
-                <h1><img src="img/img_logo_cadastro.png" alt="Tela Cadastro" style="width: 40%;"><br>Cadastro</h1>
-                
-                
-                <label for="nome" style="color: black;">Nome de Usuário</label>
-                <input type="text" id="inputNome" placeholder="Digite seu nome" required>
-
-                <label for="senha" style="color: black;">Senha</label>
-                <input type="password" style="padding-right: 50px;" id="inputSenha" placeholder="Digite seu senha" required>
-                <img class="img_senha" id="senhaonoff" src="img/dec_senhaon.png" alt="Mostrar Senha" onclick="eyeClick()">
-
-                <button id="confirma">Cadastrar</button>
-                <button id="cancela" onclick="hideModal()">Cancelar</button>
-            </div>
         </div>
         
         <!-- ### JAVASCRIPT ### -->

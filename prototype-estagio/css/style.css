@@ -1,4 +1,4 @@
-/* reset */
+/* ============================== RESET ============================== */
 *, html, body {
     margin: 0; 
     padding: 0; 
@@ -8,29 +8,23 @@
     scroll-behavior: smooth;
 }
 
-/* GRID GERAL */
+/* ============================== GRID GERAL PAGINA PRINCIPAl ============================== */
 .container {display: grid; grid-template-areas: "h" "m" "s" "f";}
 
-/* CABEÇALHO */
-header {
+/* ============================== CABEÇALHO ============================== */
+#header {
+    background-color: rgb(35, 50, 75);
     grid-area: h;
     top: 0;
     left: 0;
+    height: 7vh;
+    padding: 20px 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.mobile-menu {
-    display: none;
-    cursor: pointer;
-}
-
-.mobile-menu div {
-    width: 32px;
-    height: 2px;
-    background: white;
-    margin: 8px;
-}
-
-.logo {
+#logo {
     color: white;
     font-size: 24px;
     text-transform: uppercase;
@@ -38,25 +32,20 @@ header {
     cursor: default;
 }
 
-nav {
-    background-color: rgb(35, 50, 75);
-    
-    width: 100%;
-    height: 7vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-nav ul {
+#menu {
     list-style: none;
     display: flex;
-}
-nav ul li {
-    margin-left: 24px;
+    gap: 24px;
 }
 
-nav li a,       footer a       {color: white; text-decoration: none; text-transform: uppercase; padding: 1.9vh; transition: all 0.3s ease;}
+nav li a, footer a {
+    color: white; 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    padding: 1.9vh; 
+    transition: all 0.3s ease;
+}
+
 nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
 
 #buttonEntrar {
@@ -80,61 +69,86 @@ nav li a:hover, footer a:hover {background-color: rgb(23, 34, 51);}
 }
 #buttonCadastrar:hover {background-color: rgb(49, 98, 161); border-color: rgb(49, 98, 161);}
 
+#btn-mobile {
+    display: none;
+}
 
-/* RESPONSIVIDADE DO CABEÇALHO */
-@media (max-width: 999px) {
-    body {
-        overflow-x: hidden;
+/* ============================== RESPONSIVIDADE DO CABEÇALHO ============================== */
+@media (max-width: 600px) {
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+        color: white;
     }
 
-    .buttonAccount {
+    #hamburguer {
+        display: block;
+        width: 20px;
+        border-top: 2px solid;
+    }
+    #hamburguer::after, #hamburguer::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburguer {
+        border: none;
+    }
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    #buttonAccount {
         display: none;
     }
 
-    nav ul {
-        position: absolute;
-        top: 7vh;
-        right: 0;
-        width: 50vw;
-        height: 93vh;
-        background-color: rgb(35, 50, 75);
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-    }
-
-    nav ul li {
-        margin-left: 0;
-        opacity: 0;
-    }
-
-    .mobile-menu {
+    #menu  {
         display: block;
+        position: absolute;
+        height: calc(100vh - 7vh);
+        top: 7vh;
+        padding-top: 1rem;
+        right: 0;
+        background-color: rgb(35, 50, 75);
+        width: 0;
+        transition: .6s;
+        z-index: 1000;
+    }
+
+    #menu li {
+        margin-bottom: 2rem;
+    }
+
+    #menu a {
+        margin: 0 1rem; 
+        border-bottom: 2px solid rgba(0, 0, 0, 0.3);  
+    }
+
+    #nav.active #menu {
+        width: 100%;
     }
 }
 
-nav ul.show {
-    transform: translateX(0); 
-}
-
-/* RESPONSIVIDADE DA IMAGEM PRINCIPAL  XXXXX ERROR XXXXX
-@media (max-width: 700px) {
-    main {width: 50%; height: 50vh;}
-    
-}*/
-
-/* RESPONSIVIDADE DO TÍTULO */
-@media (max-width: 700px) {
-    #div_titulo #titulo {font-size: 2rem;}
-    #div_titulo p {font-size: 15px;}
-}
-
-/* INÍCIO */
-main {
-    /*background: url(../img/img_principal.jpg) no-repeat center center;
-    background-size: cover;*/
-    background-color: rgb(49, 98, 161);
+/* ============================== INÍCIO ============================== */
+#main {
+    /*background: url(../img/img_principal.jpg) no-repeat center center;*/
+    background-color: rgb(68, 124, 202);
+    background-size: cover;
     height: 93vh;
     grid-area: m;
 }
@@ -158,7 +172,7 @@ main {
     cursor: default;
 }
 
-/* CONTEÚDO */
+/* ============================== CONTEÚDO ============================== */
 section {
     background: linear-gradient(360deg, rgb(255, 255, 255) 60%, rgb(216, 216, 238) 80% , rgb(144, 172, 212)) ;
     width: 100%;
@@ -197,11 +211,11 @@ section {
 #sobre_3 {grid-area: sob3; text-align: justify;}
 #imagem_3 {grid-area: img3;}
 
-/* RODAPÉ */
+/* ============================== RODAPÉ ============================== */
 footer {
     background-color: rgb(38, 43, 61);
     width: 100%;
-    min-height: 30vh;
+    height: auto;
     grid-area: f;
 }
 
@@ -223,7 +237,7 @@ footer div p {
     cursor: default;
 }
 
-/* MODAL */
+/* ============================== MODAL ============================== 
 .modal {
     background-color: rgba(0, 0, 0, 0.3);
     position: fixed;
@@ -325,7 +339,31 @@ footer div p {
 
 .blur-all {
     filter: blur(3px);
+}*/
+
+/* ===================================================== PAGINA DE LOGIN =======================================================*/
+#main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+#left-login {
+    background-color: aquamarine;
+    width: 40vw;
+    height: 100vh;
+}
+#right-login {
+    background-color: rgb(255, 127, 127);
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+#card {
+    margin: auto;
+}
+
+
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {width: 5px;}
