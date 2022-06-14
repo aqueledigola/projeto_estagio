@@ -83,7 +83,7 @@ nav li a:hover, footer a:hover {border-bottom: 3px solid white;}
 /* ============================== INÍCIO ============================== */
 #main {
     background: url(../img/img_principal_desktop.jpg) no-repeat center center;
-    /*background-color: rgb(68, 124, 202);*/
+    background-color: rgb(45, 86, 143);
     background-size: cover;
     height: 90vh;
     width: calc(100vw - 5px);
@@ -187,7 +187,6 @@ footer div p {
 
 /* ============================== RESPONSIVIDADE 700px ============================== */
 @media (max-width: 700px) {
-    
     /* ========================== RESPONSIVIDADE CABEÇALHO ===========================*/
     #btn-mobile {
         display: flex;
@@ -242,8 +241,7 @@ footer div p {
 
     #menu li {
         margin-bottom: 2rem;
-        opacity: 0;
-        transition: .5s;
+        display: none;
     }
 
     #menu a {
@@ -277,7 +275,7 @@ footer div p {
     }
 
     #nav.active #menu li {
-        opacity: 1;
+        display: block;
     }
 
     /* ========================== RESPONSIVIDADE MAIN ===========================*/
