@@ -229,7 +229,7 @@ footer div p {
     #menu  {
         display: block;
         position: absolute;
-        height: calc(100vh - 7vh);
+        height: calc(90vh - 7vh);
         top: 7vh;
         padding-top: 1rem;
         right: 0;
@@ -280,9 +280,8 @@ footer div p {
 
     /* ========================== RESPONSIVIDADE MAIN ===========================*/
     #main {
-        /*background: url(../img/img_principal_mobile.jpg) no-repeat center center;*/
-        width: 100vw;
-        max-height: 50vh;
+        background: url(../img/img_principal_mobile.jpg) no-repeat center center;
+        height: 90vh;
     }
 
     #div_titulo {
